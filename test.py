@@ -5,23 +5,19 @@ from dfa import DFA
 
 class DFATest(unittest.TestCase):
     def test_simple_language(self):
-        states = ["q0", "q1", "q2"]
-        alphabet = ["a", "b"]
-        delta = {("q0", "a") : "q0",
-                 ("q0", "b") : "q1",
-                 ("q1", "a") : "q2",
-                 ("q1", "b") : "q2",
-                 ("q2", "a") : "q2",
-                 ("q2", "b") : "q2"}
-        initial = "q0"
-        terminals = ["q1"]
+        m = {'states'    : ["q0", "q1", "q2"],
+             'alphabet'  : ["a", "b"],
+             'initial'   : "q0",
+             'terminals' : ["q1"],
+             'delta'     : {("q0", "a") : "q0",
+                            ("q0", "b") : "q1",
+                            ("q1", "a") : "q2",
+                            ("q1", "b") : "q2",
+                            ("q2", "a") : "q2",
+                            ("q2", "b") : "q2"}}
 
         self.my_dfa = DFA()
-        self.my_dfa.load(states,
-                         alphabet,
-                         delta,
-                         initial,
-                         terminals)
+        self.my_dfa.load(m)
 
         self.assertTrue(self.my_dfa.accepts("ab"))
         self.assertTrue(self.my_dfa.accepts("aaaab"))
