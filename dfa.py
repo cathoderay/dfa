@@ -1,3 +1,6 @@
+import yaml
+
+
 class DFA:
     def load(self,
              states,
@@ -12,7 +15,12 @@ class DFA:
         self.F = terminals
 
     def load_from_yaml(self, filename):
-        pass
+        o = yaml.load(open(filename, 'r+'))
+        self.load(states=o['states'],
+                  alphabet=o['alphabet'],                 
+                  delta=o['delta'],
+                  initial=o['initial'],
+                  terminals=o['terminals'])
 
     def accepts(self, string):
         return reduce(lambda st, sy: self.D[(st, sy)], string, self.q0) in self.F
