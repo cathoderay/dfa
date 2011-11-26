@@ -43,11 +43,17 @@ TRANSLATING TO PYTHON
 
 Translating to Python syntax (previous example):
 
+    S (alphabet)  : list of valid symbols (input alphabet), e.g. 
+                    ["a", "b"]
+
     Q (states)    : list of internal states, e.g. 
                     ["q0", "q1", "q2"]
 
-    S (alphabet)  : list of valid symbols (input alphabet), e.g. 
-                    ["a", "b"]
+    q0 (initial)  : an element from Q, e.g.
+                    "q0"
+
+    F (terminals) : list of final states, e.g.
+                    ["q1"]
 
     D (delta)     : dictionary that represents the transitions from 
                     the state machine, e.g.
@@ -57,12 +63,6 @@ Translating to Python syntax (previous example):
                      ("q1", "b") : "q2",
                      ("q2", "a") : "q2",
                      ("q2", "b") : "q2"}
-
-    q0 (initial)  : an element from Q, e.g.
-                    "q0"
-
-    F (terminals) : list of final states, e.g.
-                    ["q1"]
 
 
 HOW TO USE:
