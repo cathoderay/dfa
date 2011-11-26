@@ -5,6 +5,7 @@ from dfa import DFA
 
 class DFATest(unittest.TestCase):
     def test_simple_language(self):
+        #Language = {a^nb : n >= 0}
         m = {'states'    : ["q0", "q1", "q2"],
              'alphabet'  : ["a", "b"],
              'initial'   : "q0",
@@ -25,6 +26,8 @@ class DFATest(unittest.TestCase):
 
         self.assertFalse(self.my_dfa.accepts("aba"))
         self.assertFalse(self.my_dfa.accepts("aabbabaa"))
+        self.assertFalse(self.my_dfa.accepts("aaaaa"))
+
 
     def test_load_from_yaml(self):
         self.my_dfa = DFA()
@@ -36,6 +39,7 @@ class DFATest(unittest.TestCase):
 
         self.assertFalse(self.my_dfa.accepts("aba"))
         self.assertFalse(self.my_dfa.accepts("aabbabaa"))
+        self.assertFalse(self.my_dfa.accepts("aaaaa"))
 
 
 if __name__ == "__main__":

@@ -1,22 +1,41 @@
 Deterministic Finite Automaton
 ==============================
 
-Definition:
------------
+Formal definition:
+------------------
 
     M : (Q, Σ, δ, q0, F)
-
     Q                   finite set of internal states
     Σ                   finite set of symbols -- input alphabet
     δ : Q x Σ -> Q      total function -- transition function
     q0 ∈ Q              initial state
     F ⊆ Q               set of final states 
 
+How a DFA operates:
+-------------------
+For each symbol in an input string, the automaton applies the δ function.
+If the string is processed as a whole and reaches a terminal state, then the 
+string is considered accepted. Otherwise, it is rejected.
 
-Format:
--------
+A better way to understand/visualize automata operations is to draw a graph
+from its definition.
+      
 
-Defining a Deterministic Finite Automaton:
+             ____             ____             ____
+      ----> |    |     b     | *  |   a, b    |    |
+            | q0 |---------->| q1 |---------->| q2 |<-----+
+         +->|____|           |____|           |____|      |
+         |     |                                 |        | a, b
+         |_____|                                 |________|
+            a
+
+* is a final state.
+
+
+DFA Format:
+-----------
+
+Translating to Python syntax (an example):
 
     Q (states)    : list of internal states, e.g. 
                     ["q0", "q1", "q2"]
@@ -24,8 +43,9 @@ Defining a Deterministic Finite Automaton:
     S (alphabet)  : list of valid symbols (input alphabet), e.g. 
                     ["a", "b"]
 
-    D (delta)     : dictionary that takes a tuple (2 elements: 1 state from Q and 1 symbol from S), e.g.
-                     {("q0", "a") : "q0",
+    D (delta)     : dictionary that represents the transitions from 
+                    the state machine, e.g.
+                    {("q0", "a") : "q0",
                      ("q0", "b") : "q1",
                      ("q1", "a") : "q2",
                      ("q1", "b") : "q2",
