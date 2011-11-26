@@ -4,7 +4,7 @@ from dfa import DFA
 
 
 class DFATest(unittest.TestCase):
-    def setUp(self):
+    def testSimpleLanguage(self):
         states = ["q0", "q1", "q2"]
         alphabet = ["a", "b"]
         delta = {("q0", "a") : "q0",
@@ -22,11 +22,7 @@ class DFATest(unittest.TestCase):
                           initial,
                           terminals)
 
-    def test_accepts_simple_word(self):
         self.assertTrue(self.my_dfa.accepts("ab"))
-
-
-    def test_rejects_simple_word(self):
         self.assertFalse(self.my_dfa.accepts("aba"))
 
 
