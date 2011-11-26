@@ -41,7 +41,7 @@ can be represented by the following graph:
 TRANSLATING TO PYTHON
 =====================
 
-Translating to Python syntax (an example):
+Translating to Python syntax (previous example):
 
     Q (states)    : list of internal states, e.g. 
                     ["q0", "q1", "q2"]
