@@ -1,0 +1,43 @@
+Deterministic Finite Automaton
+==============================
+
+Definition:
+-----------
+
+    M : (Q, Σ, δ, q0, F)
+
+    Q                   finite set of internal states
+    Σ                   finite set of symbols -- input alphabet
+    δ : Q x Σ -> Q      total function -- transition function
+    q0 ∈ Q              initial state
+    F ⊆ Q               set of final states 
+
+
+Format:
+-------
+
+Defining a Deterministic Finite Automaton:
+
+    Q (states)    : list of internal states, e.g. 
+                    ["q0", "q1", "q2"]
+
+    S (alphabet)  : list of valid symbols (input alphabet), e.g. 
+                    ["a", "b"]
+
+    D (delta)     : dictionary that takes a tuple (2 elements: 1 state from Q and 1 symbol from S), e.g.
+                     {("q0", "a") : "q0",
+                     ("q0", "b") : "q1",
+                     ("q1", "a") : "q2",
+                     ("q1", "b") : "q2",
+                     ("q2", "a") : "q2",
+                     ("q2", "b") : "q2"}
+
+    q0 (initial)  : an element from Q, e.g.
+                    "q0"
+
+    F (terminals) : list of final states, e.g.
+                    ["q1"]
+
+The previous definition represents the following language:
+
+        L = {a^nb : n >= 0}
