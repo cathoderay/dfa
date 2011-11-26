@@ -20,26 +20,26 @@ class DFATest(unittest.TestCase):
         self.my_dfa = DFA()
         self.my_dfa.load(m)
 
-        self.assertTrue(self.my_dfa.accepts("ab"))
-        self.assertTrue(self.my_dfa.accepts("aaaab"))
-        self.assertTrue(self.my_dfa.accepts("b"))
+        self.assertTrue(self.my_dfa.__accepts("ab"))
+        self.assertTrue(self.my_dfa.__accepts("aaaab"))
+        self.assertTrue(self.my_dfa.__accepts("b"))
 
-        self.assertFalse(self.my_dfa.accepts("aba"))
-        self.assertFalse(self.my_dfa.accepts("aabbabaa"))
-        self.assertFalse(self.my_dfa.accepts("aaaaa"))
+        self.assertFalse(self.my_dfa.__accepts("aba"))
+        self.assertFalse(self.my_dfa.__accepts("aabbabaa"))
+        self.assertFalse(self.my_dfa.__accepts("aaaaa"))
 
 
     def test_load_from_yaml(self):
         self.my_dfa = DFA()
         self.my_dfa.load_from_yaml("example.yaml")
 
-        self.assertTrue(self.my_dfa.accepts("ab"))
-        self.assertTrue(self.my_dfa.accepts("aaaab"))
-        self.assertTrue(self.my_dfa.accepts("b"))
+        self.assertTrue(self.my_dfa.__accepts("ab"))
+        self.assertTrue(self.my_dfa.__accepts("aaaab"))
+        self.assertTrue(self.my_dfa.__accepts("b"))
 
-        self.assertFalse(self.my_dfa.accepts("aba"))
-        self.assertFalse(self.my_dfa.accepts("aabbabaa"))
-        self.assertFalse(self.my_dfa.accepts("aaaaa"))
+        self.assertFalse(self.my_dfa.__accepts("aba"))
+        self.assertFalse(self.my_dfa.__accepts("aabbabaa"))
+        self.assertFalse(self.my_dfa.__accepts("aaaaa"))
 
 
 if __name__ == "__main__":

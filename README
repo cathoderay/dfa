@@ -1,5 +1,5 @@
-Deterministic Finite Automaton
-==============================
+A BIT OF THEORY
+===============
 
 Formal definition:
 ------------------
@@ -17,8 +17,14 @@ For each symbol in an input string, the automaton applies the δ function.
 If the string is processed as a whole and reaches a terminal state, then the 
 string is considered accepted. Otherwise, it is rejected.
 
-A better way to understand/visualize automata operations is to draw a graph
+A better way to understand/visualize automaton operations is to draw a graph
 from its definition.
+
+For example, an automaton that processes the language
+
+        L = {a^nb : n >= 0},
+
+can be represented by the following graph:
       
 
              ____             ____             ____
@@ -32,8 +38,8 @@ from its definition.
 * is a final state.
 
 
-DFA Format:
------------
+TRANSLATING TO PYTHON
+=====================
 
 Translating to Python syntax (an example):
 
@@ -58,6 +64,4 @@ Translating to Python syntax (an example):
     F (terminals) : list of final states, e.g.
                     ["q1"]
 
-The previous definition represents the following language:
 
-        L = {a^nb : n >= 0}

@@ -15,7 +15,13 @@ class DFA:
         except Exception, e:
             print e
 
-    def accepts(self, string):
+    def __accepts(self, string):
         return reduce(lambda st, sy: self.D[(st, sy)], string, self.q0) in self.F
+
+    def accepts(self, string):
+        if self.__accepts(string):
+            print "%s is accepted." % string
+        else:
+            print "%s is rejected." % string
 
 
