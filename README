@@ -1,5 +1,5 @@
-A BIT OF THEORY
-===============
+DETERMINISTIC FINITE AUTOMATON (A BIT OF THEORY)
+===============================================
 
 Formal definition:
 ------------------
@@ -65,3 +65,6 @@ Translating to Python syntax (an example):
                     ["q1"]
 
 
+HOW TO USE:
+===========
+See the example.py.
