@@ -6,13 +6,10 @@ class DFA:
                  initial,
                  terminals):
         self.Q = states
-        self.S= alphabet
+        self.S = alphabet
         self.D = delta
         self.q0 = initial
         self.F = terminals
 
     def accepts(self, string):
-        c = self.q0
-        for symbol in string:
-            c = self.D[(c, symbol)]
-        return c in self.F
+        return reduce(lambda state, symbol: self.D[(state, symbol)], string, self.q0) in self.F

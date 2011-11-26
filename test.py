@@ -23,6 +23,9 @@ class DFATest(unittest.TestCase):
                           terminals)
 
         self.assertTrue(self.my_dfa.accepts("ab"))
+        self.assertTrue(self.my_dfa.accepts("aaaab"))
+        self.assertTrue(self.my_dfa.accepts("b"))
+
         self.assertFalse(self.my_dfa.accepts("aba"))
 
 
