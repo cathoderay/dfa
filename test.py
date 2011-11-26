@@ -22,9 +22,12 @@ class DFATest(unittest.TestCase):
                           initial,
                           terminals)
 
-    def test_accepts_simple_language(self):
+    def test_accepts_simple_word(self):
         self.assertTrue(self.my_dfa.accepts("ab"))
 
+
+    def test_rejects_simple_word(self):
+        self.assertFalse(self.my_dfa.accepts("aba"))
 
 
 if __name__ == "__main__":
