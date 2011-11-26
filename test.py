@@ -23,7 +23,7 @@ class DFATest(unittest.TestCase):
                           terminals)
 
     def test_accepts_simple_language(self):
-        self.assertTrue(self.my_dfa.accepts("aba"))
+        self.assertTrue(self.my_dfa.accepts("ab"))
 
 
 
