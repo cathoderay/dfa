@@ -4,7 +4,7 @@ from dfa import DFA
 
 
 class DFATest(unittest.TestCase):
-    def testSimpleLanguage(self):
+    def test_simple_language(self):
         states = ["q0", "q1", "q2"]
         alphabet = ["a", "b"]
         delta = {("q0", "a") : "q0",
@@ -16,17 +16,30 @@ class DFATest(unittest.TestCase):
         initial = "q0"
         terminals = ["q1"]
 
-        self.my_dfa = DFA(states,
-                          alphabet,
-                          delta,
-                          initial,
-                          terminals)
+        self.my_dfa = DFA()
+        self.my_dfa.load(states,
+                         alphabet,
+                         delta,
+                         initial,
+                         terminals)
 
         self.assertTrue(self.my_dfa.accepts("ab"))
         self.assertTrue(self.my_dfa.accepts("aaaab"))
         self.assertTrue(self.my_dfa.accepts("b"))
 
         self.assertFalse(self.my_dfa.accepts("aba"))
+        self.assertFalse(self.my_dfa.accepts("aabbabaa"))
+
+    def test_load_from_yaml(self):
+        self.my_dfa = DFA()
+        self.my_dfa.load_from_yaml("example.yaml")
+
+        self.assertTrue(self.my_dfa.accepts("ab"))
+        self.assertTrue(self.my_dfa.accepts("aaaab"))
+        self.assertTrue(self.my_dfa.accepts("b"))
+
+        self.assertFalse(self.my_dfa.accepts("aba"))
+        self.assertFalse(self.my_dfa.accepts("aabbabaa"))
 
 
 if __name__ == "__main__":
