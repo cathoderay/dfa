@@ -9,7 +9,7 @@ Formal definition:
     Σ                   finite set of symbols -- input alphabet
     δ : Q x Σ -> Q      total function -- transition function
     q0 ∈ Q              initial state
-    F ⊆ Q               set of final states 
+    F ⊆ Q               set of terminal states 
 
 How a DFA operates:
 -------------------
@@ -35,7 +35,7 @@ can be represented by the following graph:
          |_____|                                 |________|
             a
 
-* is a final state.
+* is a terminal state.
 
 
 TRANSLATING TO PYTHON
