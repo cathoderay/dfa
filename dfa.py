@@ -23,5 +23,3 @@ class DFA:
             print "%s is accepted." % string
         else:
             print "%s is rejected." % string
-
-
