@@ -72,7 +72,7 @@ See examples in the automata directory.
 
 CHECKING YOUR AUTOMATON
 =======================
-$ ./check_automaton automata/one_zero.yaml 
+$ ./check automata/one_zero.yaml 
 String:  001
 001 is rejected.
 String:  110
