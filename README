@@ -65,13 +65,13 @@ Translating to Python syntax (previous example):
                      ("q2", "b") : "q2"}
 
 
-CREATING YOUR AUTOMATON:
-========================
+CREATING YOUR AUTOMATON
+=======================
 See examples in the automata directory.
 
 
-CHECKING YOUR AUTOMATON:
-========================
+CHECKING YOUR AUTOMATON
+=======================
 $ ./check_automaton automata/one_zero.yaml 
 String:  001
 001 is rejected.
@@ -79,6 +79,6 @@ String:  110
 110 is accepted.
 
 
-HOW TO USE AS A MODULE:
-=======================
+HOW TO USE AS A MODULE
+======================
 See example.py.
