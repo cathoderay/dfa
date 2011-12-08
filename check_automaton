@@ -17,8 +17,7 @@ if __name__ == "__main__":
         while True:
             try:
                 print "String: ", 
-                inp = raw_input()
-                m.accepts(inp)
+                m.accepts(raw_input())
             except KeyboardInterrupt:
                 exit(0)
             except Exception, e:
