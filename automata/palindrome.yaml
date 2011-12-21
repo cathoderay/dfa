@@ -1,0 +1,47 @@
+#Automaton that accepts palindromes, e.g. 'aba', 'ada'
+
+alphabet: [a, b, c, d]
+states: [q0, q1, q2, q3, q4]
+initial: q0
+terminals: [q3]
+delta:
+  ? !!python/tuple [q0, a]
+  : q1
+  ? !!python/tuple [q0, b]
+  : q4
+  ? !!python/tuple [q0, c]
+  : q4
+  ? !!python/tuple [q0, d]
+  : q4
+  ? !!python/tuple [q1, a]
+  : q2
+  ? !!python/tuple [q1, b]
+  : q2
+  ? !!python/tuple [q1, c]
+  : q2
+  ? !!python/tuple [q1, d]
+  : q2
+  ? !!python/tuple [q2, a]
+  : q3
+  ? !!python/tuple [q2, b]
+  : q4
+  ? !!python/tuple [q2, c]
+  : q4
+  ? !!python/tuple [q2, d]
+  : q4
+  ? !!python/tuple [q3, a]
+  : q4
+  ? !!python/tuple [q3, b]
+  : q4
+  ? !!python/tuple [q3, c]
+  : q4
+  ? !!python/tuple [q3, d]
+  : q4
+  ? !!python/tuple [q4, a]
+  : q4
+  ? !!python/tuple [q4, b]
+  : q4
+  ? !!python/tuple [q4, c]
+  : q4
+  ? !!python/tuple [q4, d]
+  : q4
